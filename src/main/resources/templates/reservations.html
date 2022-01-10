@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Landon Hotel: Room Reservations</title>
+</head>
+<body>
+    <h1>Welcome to Room Reservations Page</h1>
+    <table>
+        <tr>
+            <th>Room</th>
+            <th>Room Number</th>
+            <th>Guest</th>
+        </tr>
+        <tr th:each="roomReservation : ${reservations}">
+            <td th:text="${roomReservation.getRoomName()}">Room Name</td>
+            <td th:text="${roomReservation.getRoomNumber()}">Room Number</td>
+            <td th:text="${roomReservation.getLastName()} != null ? ${roomReservation.getLastName()} + ', ' + ${roomReservation.getFirstName()} : 'VACANT'">Guest</td>
+        </tr>
+    </table>
+
+</body>
+</html>

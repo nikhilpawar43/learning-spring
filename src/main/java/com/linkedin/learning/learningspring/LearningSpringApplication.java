@@ -18,20 +18,3 @@ public class LearningSpringApplication {
     }
 
 }
-
-@RestController
-@RequestMapping("/rooms")
-class RoomController {
-    
-    private RoomRepository roomRepository;
-
-    @Autowired
-    public RoomController(RoomRepository roomRepository) {
-        this.roomRepository = roomRepository;
-    }
-
-    @GetMapping("")
-    public Iterable<Room> getRooms() {
-        return this.roomRepository.findAll();
-    }
-}
